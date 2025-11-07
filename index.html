@@ -25,6 +25,50 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Define the new primary color: Electric Cyan */
+            --bs-primary: #00FFFF;
+            --bs-primary-rgb: 0, 255, 255;
+            /* Define a dark secondary color for contrast */
+            --bs-dark: #000000;
+        }
+
+        /* Override Bootstrap utility classes to use the new primary color */
+        .text-primary {
+            color: var(--bs-primary) !important;
+        }
+        .btn-primary {
+            color: var(--bs-dark); /* Ensure text is dark on the bright button */
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+        .btn-primary:hover {
+            background-color: #00cccc; /* Slightly darker cyan on hover */
+            border-color: #00cccc;
+        }
+        .spinner-grow.text-primary {
+            color: var(--bs-primary) !important;
+        }
+        .hero-header {
+            /* Example of a dark header background for high contrast */
+            background-color: #111111;
+            color: white; 
+        }
+        .hero-header h1, .hero-header p, .hero-header h5 {
+            color: white !important;
+        }
+
+        /* Styling for the copied text/buttons - using dark theme for contrast */
+        .input-group button.btn-primary {
+            color: var(--bs-dark) !important;
+        }
+        .back-to-top {
+            background-color: var(--bs-primary) !important;
+            color: var(--bs-dark) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,7 +103,7 @@
         </div>
     </nav>
     
-    <div id="home" class="container-fluid hero-header pt-5">
+    <div id="home" class="container-fluid hero-header pt-5" style="background-color: #111111;">
         <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 animated fadeIn order-lg-2">
@@ -68,16 +112,16 @@
                 </div>
                 
                 <div class="col-lg-6 order-lg-1">
-                    <h1 class="display-4 mb-3 animated slideInDown">Welcome, Sinner. Confession accepted. Your journey begins here.</h1>
-                    <p class="animated slideInDown">
+                    <h1 class="display-4 mb-3 animated slideInDown" style="color: white !important;">Welcome, Sinner. Confession accepted. Your journey begins here.</h1>
+                    <p class="animated slideInDown" style="color: #cccccc !important;">
                         $SINN — The Meme Coin for Bold Believers. We sin. We win. We repeat.
                         We’re not saints. We’re SINNERS. Meme coin. Community-first. Built for degens, traders, and believers who move fast and think wild.
                     </p>
                     
                     <div class="wow fadeInUp mt-4" data-wow-delay="0.5s">
-                        <h5 class="text-dark mb-2">Contract Address (CA):</h5>
+                        <h5 class="text-light mb-2">Contract Address (CA):</h5>
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light" id="ca-hero" value="46YRESRHrebZw6K7Vcwq4wP7pKdM3ZxCPPrnHDEHpump" readonly style="font-size: 0.9rem; font-weight: 500;">
+                            <input type="text" class="form-control bg-light text-dark" id="ca-hero" value="46YRESRHrebZw6K7Vcwq4wP7pKdM3ZxCPPrnHDEHpump" readonly style="font-size: 0.9rem; font-weight: 500;">
                             <button class="btn btn-primary" type="button" onclick="copyCA('ca-hero', this)">COPY</button>
                         </div>
                     </div>
@@ -239,10 +283,10 @@
         </div>
     </div>
     
-    <div id="tokenomics" class="container-xxl bg-light py-5 my-5">
+    <div id="tokenomics" class="container-xxl py-5 my-5" style="background-color: #000000;">
         <div class="container py-5">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">TOKENOMICS</h1>
+                <h1 class="display-6" style="color: white !important;">TOKENOMICS</h1>
                 <p class="text-primary fs-5 mb-5">The Heart of $SINN's Structure</p>
             </div>
             
@@ -252,7 +296,7 @@
                         <h2 class="text-dark mb-4">Official Contract Address</h2>
                         <div class="input-group">
                             <input type="text" class="form-control" id="ca-tokenomics" value="46YRESRHrebZw6K7Vcwq4wP7pKdM3ZxCPPrnHDEHpump" readonly>
-                            <button class="btn btn-dark" type="button" onclick="copyCA('ca-tokenomics', this)">COPY</button>
+                            <button class="btn btn-primary" type="button" onclick="copyCA('ca-tokenomics', this)">COPY</button>
                         </div>
                         <p class="text-secondary mt-3 mb-0">Always verify the address before executing any trades.</p>
                     </div>
