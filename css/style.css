@@ -459,3 +459,61 @@ h6,
 .footer .copyright a:hover {
     color: var(--primary) !important; 
 }
+
+
+/*** RESPONSIVENESS: Mobile Adjustments ***/
+
+/* General adjustment for tablet/desktop split */
+@media (max-width: 991.98px) {
+    /* Reduce Hero Padding on Tablet/Mobile */
+    .hero-header {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+    }
+}
+
+/* Specific adjustments for small mobile screens */
+@media (max-width: 767.98px) {
+    
+    /* Significantly reduce large headings on small screens for readability */
+    h1, .display-4, .hero-header h1 {
+        font-size: 2.5rem !important; 
+        /* Reduce heavy shadow for mobile clarity */
+        text-shadow: 
+            -1px -1px 0 #FFF, 
+            1px -1px 0 #FFF, 
+            -1px 1px 0 #FFF, 
+            1px 1px 0 #FFF, 
+            3px 3px 0 var(--secondary); 
+    }
+
+    .display-6 {
+        font-size: 2rem !important; 
+    }
+    
+    /* Center text content in the hero on mobile */
+    .hero-header .row > div {
+        text-align: center;
+    }
+    /* Add top margin to separate image from text on mobile */
+    .hero-header img {
+        margin-top: 2.5rem !important;
+    }
+
+    /* Make CA input smaller for single-line display */
+    .input-group input.form-control {
+        font-size: 0.8rem !important;
+        /* Allow it to shrink */
+        min-width: 120px; 
+    }
+    .input-group button.btn {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Ensure footer elements stack better */
+    .footer .col-md-6, .footer .col-lg-6 {
+        margin-bottom: 30px;
+    }
+}
