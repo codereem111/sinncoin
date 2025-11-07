@@ -1,0 +1,461 @@
+/********** Template CSS **********/
+:root {
+    --primary: #FFC107;      /* A bright, golden yellow from the emoji/suit */
+    --secondary: #2196F3;    /* A vibrant blue from the sky */
+    --light: #E3F2FD;        /* A very light blue, almost white, from the lighter sky/clouds */
+    --dark: #1A237E;         /* A deep, rich blue/indigo for dark text and strong contrasts */
+}
+
+/* --- FONT STYLE AND SIZE EDITS --- */
+
+/* Use Varela Round for the playful, bubbly look */
+body {
+    font-size: 1.15rem; 
+    font-family: 'Varela Round', sans-serif; 
+    color: var(--dark); 
+}
+
+/* Big Headings: Cartoonish Effect (White Outline + Blue Drop Shadow) */
+h1, .display-4, .display-6 {
+    font-weight: 900 !important; 
+    color: var(--dark) !important; 
+    font-size: 4rem; 
+    text-shadow: 
+        -2px -2px 0 #FFF, 
+        2px -2px 0 #FFF, 
+        -2px 2px 0 #FFF, 
+        2px 2px 0 #FFF, 
+        5px 5px 0 var(--secondary); /* Vibrant Blue drop shadow/outline */
+}
+.hero-header h1 {
+    font-size: 4.5rem; /* Even bigger in the hero */
+}
+
+.display-6 {
+    font-size: 3rem; 
+    text-shadow: 2px 2px 0 var(--primary); /* Gold shadow for section headings */
+}
+
+/* Secondary Headings */
+h2, h3 {
+    font-weight: 800 !important;
+    color: var(--dark) !important;
+    text-shadow: 1px 1px 0 var(--light);
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+    font-weight: 700 !important; 
+    color: var(--dark) !important; 
+}
+/* --- END FONT STYLE AND SIZE EDITS --- */
+
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 60px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button - Bubbly Style ***/
+.btn {
+    font-weight: 700;
+    transition: .3s;
+    border-radius: 50px !important; /* Bubbly, fully rounded buttons */
+    padding: 12px 30px; 
+    letter-spacing: 1px;
+}
+
+/* Primary Button (Golden Yellow) */
+.btn.btn-primary {
+    color: var(--dark); 
+    background-color: var(--primary); 
+    border-color: var(--primary); 
+    box-shadow: 0 4px 0 var(--dark); /* Pressed effect */
+}
+.btn.btn-primary:hover {
+    box-shadow: 0 2px 0 var(--dark); /* Hover effect */
+    transform: translateY(2px);
+    color: var(--dark); 
+    background-color: var(--primary); 
+    border-color: var(--primary); 
+}
+
+/* Dark Button (Deep Blue) */
+.btn.btn-dark {
+    color: #FFFFFF;
+    background-color: var(--dark);
+    border-color: var(--dark);
+    box-shadow: 0 4px 0 var(--primary); /* Pressed effect with yellow */
+}
+.btn.btn-dark:hover {
+    color: var(--dark); 
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 2px 0 var(--dark);
+    transform: translateY(2px);
+}
+
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+    border-radius: 50% !important;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+    border-radius: 50% !important;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: var(--dark); 
+    font-weight: 700; /* Bolder nav links */
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary); 
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+.navbar .btn:hover {
+    color: #FFFFFF !important;
+    background: var(--dark) !important; 
+}
+
+
+/*** Header - Gradient Background ***/
+.hero-header {
+    background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%) !important;
+    padding-top: 10rem !important;
+    padding-bottom: 10rem !important;
+}
+
+.hero-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--secondary);
+}
+
+/* CA Input Field Styling */
+.input-group input.form-control {
+    border-radius: 50px 0 0 50px !important;
+    border-color: var(--primary) !important;
+}
+.input-group button.btn {
+    border-radius: 0 50px 50px 0 !important;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -80px;
+    right: -80px;
+    border: 80px solid;
+    transform: rotate(45deg);
+    opacity: 1;
+    transition: .5s;
+}
+
+.service-item.bg-white::after {
+    border-color: transparent transparent var(--light) transparent;
+}
+
+.service-item.bg-light::after {
+    border-color: transparent transparent #FFFFFF transparent;
+}
+
+.service-item:hover::after {
+    opacity: 0;
+}
+
+
+/*** Roadmap ***/
+.roadmap-carousel {
+    position: relative;
+}
+
+.roadmap-carousel::before {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 100%;
+    top: 20px;
+    left: 0;
+    border-top: 2px dashed var(--dark) !important; /* Darker dashed line */
+}
+
+.roadmap-carousel .roadmap-item .roadmap-point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 6px;
+    left: 50%;
+    margin-left: -15px;
+    background: var(--primary); /* Full yellow point */
+    border: 3px solid var(--dark); /* Dark blue border */
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roadmap-carousel .roadmap-item .roadmap-point span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: var(--dark); /* Inner circle deep blue */
+}
+
+.roadmap-carousel .roadmap-item {
+    position: relative;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.roadmap-carousel .roadmap-item::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 115px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-right: 2px dashed var(--dark) !important;
+}
+
+.roadmap-carousel .roadmap-item::after {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: 111px;
+    left: 50%;
+    margin-left: -7px;
+    transform: rotate(45deg);
+    background: var(--primary); 
+}
+
+.roadmap-carousel .owl-nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.roadmap-carousel .owl-nav .owl-prev,
+.roadmap-carousel .owl-nav .owl-next {
+    margin: 0 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 22px;
+    color: var(--dark); 
+    background: #FFFFFF;
+    border: 2px solid var(--primary); 
+    transition: .5s;
+}
+
+.roadmap-carousel .owl-nav .owl-prev:hover,
+.roadmap-carousel .owl-nav .owl-next:hover {
+    color: #FFFFFF; 
+    background: var(--dark);
+}
+
+
+/*** FAQs ***/
+.accordion .accordion-item {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.accordion .accordion-button {
+    background: var(--light); 
+    border-radius: 15px !important; /* Rounded corners */
+    font-weight: 700; 
+    color: var(--dark); 
+    font-size: 1.15rem;
+    padding: 1rem 1.25rem;
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    color: #FFFFFF;
+    background: var(--dark); /* Deep blue active button */
+    box-shadow: none;
+}
+
+.accordion .accordion-button:not(.collapsed)::after {
+    /* Change icon color to white for dark background */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion .accordion-body {
+    padding: 15px 0 0 0;
+    color: var(--dark);
+}
+
+
+/*** Footer - Deep Blue Background ***/
+.footer {
+    background: var(--dark) !important;
+    color: var(--light) !important;
+}
+.footer h5, .footer .text-dark {
+    color: var(--primary) !important; /* Footer headings are golden yellow */
+}
+.footer span, .footer p {
+    color: var(--light) !important; /* Footer text is light blue */
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--secondary); 
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary); 
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary); 
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .btn.btn-square {
+    color: var(--dark); 
+    background: var(--primary); 
+    border: 1px solid var(--primary);
+    box-shadow: none;
+}
+
+.footer .btn.btn-square:hover {
+    color: #FFFFFF; 
+    background: var(--secondary); 
+    border-color: var(--secondary);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 193, 7, 0.2) !important; /* Yellow border top */
+}
+
+.footer .copyright a {
+    color: var(--secondary) !important;
+}
+
+.footer .copyright a:hover {
+    color: var(--primary) !important; 
+}
